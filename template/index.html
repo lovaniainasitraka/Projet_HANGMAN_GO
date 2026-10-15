@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Jeu du Pendu - Jouez</title>
+	<!-- link du style css -->
+	<link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body class="game-page">
+	<!-- Conteneur principal du jeu avec flexbox -->
+	<div class="game-container">
+
+	<!-- Titre -->
+		<div class="game-header">
+			<h1>Jeu du Pendu</h1>
+		</div>
+
+		<!-- Hangman Image -->
+		<div class="hangman-display">
+			<img src="{{.Image}}" alt="hangman" class="hangman-img">
+		</div>
+
+		<!-- Statistiques du Jeu -->
+		<div class="game-stats">
+			<div class="stat-box">
+				<span class="stat-label">Mot à deviner</span>
+				<span class="stat-value">{{.Game.MaskedWord}}</span>
+			</div>
+			<div class="stat-box">
+				<span class="stat-label">Essais restants</span>
+				<span class="stat-value attempts">{{.Game.AttemptsLeft}}</span>
+			</div>
+		</div>
+
+		<!-- Lettres incorrectes -->
+		<div class="incorrect-letters">
+			<span class="label">Lettres incorrectes :</span>
+			<span class="letters">
+				{{range $i, $l := .Game.IncorrectGuesses}}
+					{{if $i}}, {{end}}<strong>{{$l}}</strong>
+				{{end}}
+			</span>
+		</div>
+
+		<!-- Alphabet -->
+		<form method="POST" action="/guess" class="alphabet-form">
+			<div class="alphabet">
+				{{range $l := .Alphabet}}
+					<button
+						type="submit"
+						name="guess"
+						value="{{$l}}"
+						class="letter-btn"
+						{{if index $.Guessed $l}}disabled{{end}}>
+						{{$l}}
+					</button>
+				{{end}}
+			</div>
+		</form>
+
+		<!-- Abandonner -->
+		<div class="abandon-section">
+			<a href="/new" class="abandon-link">RECOMMENCER</a>
+		</div>
+
+	</div>
+</body>
+</html>

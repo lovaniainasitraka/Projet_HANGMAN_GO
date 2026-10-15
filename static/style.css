@@ -1,0 +1,550 @@
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+/* Apport de modification de tout le page */
+* {
+	box-sizing: border-box;
+	font-family: pangolin, cursive;
+}
+
+/* Style général du body */
+
+body {
+	font-family: 'Arial', 'Helvetica', sans-serif;
+	background: url('./images/3.png') center/cover no-repeat fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	margin: 0;
+	padding: 20px;
+}
+
+/* Page d'accueil */
+
+body.home-page {
+	background: url('./images/3.png') center/cover no-repeat fixed;
+}
+/*flexbox pour centrer le contenu*/
+.home-container {
+	background: rgba(12, 12, 12, 0.35); 
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
+	border: 2px solid gold;
+	border-radius: 12px;
+	padding: 60px 50px;
+	text-align: center;
+	width: 95%;
+	max-width: 900px;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+}
+
+/* Section du logo */
+.logo-section {
+	margin-bottom: 30px;
+}
+/* Style du logo du pendu */
+.hangman-logo {
+	width: 100px;
+	height: 100px;
+	filter: drop-shadow(0 2px 4px rgba(117, 229, 53, 0.3));
+}
+/* Contenu principal de la page d'accueil */
+.home-content {
+	margin-bottom: 20px;
+}
+/* Titre principal */
+.home-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin: 0 0 15px 0;
+	color: #fff;
+	letter-spacing: 1px;
+	font-family: "Pangolin", cursive;
+	font-size: 800%;
+}
+
+
+/* Animation pour le texte d'accueil */
+.home-description {
+	font-family: 'Creepster', cursive;
+	font-size: 3.2rem;
+	color: #b00000;
+	margin: 15px 0 30px 0;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	text-shadow:
+		0 0 5px rgba(176, 0, 0, 0.8),
+		0 0 15px rgba(176, 0, 0, 0.6),
+		0 0 30px rgba(176, 0, 0, 0.4);
+
+	animation: horrorAppear 2s ease-out forwards,
+	           horrorShake 3s infinite;
+}
+
+/* Keyframes pour l'animation d'apparition */
+.play-button {
+	display: inline-block;
+	background: #F7D84C;
+	color: white;
+	padding: 14px 35px;
+	border-radius: 4px;
+	text-decoration: none;
+	font-weight: 600;
+	font-size: 1rem;
+	transition: all 0.2s ease;
+	box-shadow: 0 2px 8px rgba(229, 57, 53, 0.3);
+	border: none;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	margin: 0 auto;
+}
+/* Effet Hover pour le bouton Jouer */
+.play-button:hover {
+	background: #080c02;
+	box-shadow: 0 4px 12px gold;
+}
+/* Effet Actif pour le bouton Jouer */
+.play-button:active {
+	transform: scale(0.98);
+}
+
+.button-icon {
+	font-size: 1.2rem;
+}
+
+/* Structure de la Page */
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.home-container {
+  flex: 1;
+  
+  
+}
+
+/* Footer */
+
+.social-footer {
+  width: 100%;
+  margin-top: auto;
+  padding: 20px 10px;
+}
+/* Conteneur du footer avec effet flou */
+.social-container {
+  max-width: 900px;
+  margin: auto;
+  background: rgba(12, 12, 12, 0.35);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 14px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  text-align: center;
+}
+
+/* Icônes des réseaux sociaux */
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 15px;
+}
+
+/* Style des icônes */
+
+.social-icon svg {
+  width: 28px;
+  height: 28px;
+  fill: white;
+  transition: fill 0.3s ease, transform 0.3s ease;
+}
+
+/* Effet Hover jaune */
+
+.social-icon:hover svg {
+  fill: #ffd600;
+  transform: translateY(-4px) scale(1.1);
+}
+
+/* Texte du footer */
+
+.footer-names {
+  font-size: 14px;
+  color: #e0e0e0;
+  margin-bottom: 6px;
+}
+/* Style ynov campus dans le footer */
+.footer-school {
+  font-size: 13px;
+  color: #bdbdbd;
+  font-style: italic;
+}
+
+
+/* Recentrer l'ecran Pour les tablettes et mobiles */
+
+@media (max-width: 768px) {
+	.game-container {
+		padding: 35px 25px;
+	}
+	
+	.game-header h1 {
+		font-size: 2rem;
+		font-family: "Pangolin", cursive;
+	}
+	
+	.game-stats {
+		gap: 15px;
+	}
+	
+	.stat-box {
+		min-width: 150px;
+		padding: 12px 20px;
+	}
+	
+	.stat-value {
+		font-size: 1.5rem;
+	}
+	
+	.alphabet {
+		grid-template-columns: repeat(6, 1fr);
+		gap: 6px;
+	}
+	
+	.letter-btn {
+		width: 36px;
+		height: 36px;
+		font-size: 0.85rem;
+	}
+}
+/* Styles pour les petits écrans (mobiles) */
+@media (max-width: 480px) {
+	.game-container {
+		padding: 25px 20px;
+	}
+	
+	.game-header h1 {
+		font-size: 1.6rem;
+		margin-bottom: 15px;
+	}
+	
+	.hangman-img {
+		width: 50%;
+	}
+	
+	.game-stats {
+		flex-direction: column;
+		gap: 10px;
+	}
+	
+	.stat-box {
+		min-width: auto;
+	}
+	
+	.stat-value {
+		font-size: 1.3rem;
+	}
+	
+	.stat-value.attempts {
+		font-size: 1.6rem;
+	}
+	
+	.incorrect-letters {
+		font-size: 0.9rem;
+	}
+	
+	.incorrect-letters .letters {
+		letter-spacing: 1px;
+		font-size: 0.95rem;
+	}
+	
+	.alphabet {
+		grid-template-columns: repeat(5, 1fr);
+		gap: 5px;
+	}
+	
+	.letter-btn {
+		width: 32px;
+		height: 32px;
+		font-size: 0.75rem;
+		border-width: 1px;
+	}
+	
+	.result-message {
+		font-size: 1.2rem;
+	}
+	
+	.restart-button {
+		padding: 10px 25px;
+		font-size: 0.9rem;
+	}
+}
+
+/* Page du Jeu */
+
+body.game-page {
+	background: url('./images/3.png') center/cover no-repeat fixed;
+}
+
+.game-container {
+	background-color: rgba(255, 255, 255, 0.95);
+	padding: 60px 50px;
+	border-radius: 8px;
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+	text-align: center;
+	width: 95%;
+	max-width: 1000px;
+}
+/* En-tête du jeu  (titre) */
+.game-header h1 {
+	font-size: 4.5rem;
+	margin: 0 0 25px 0;
+	color: red;
+	font-family: pangolin, cursive;
+}
+/* Affichage du pendu */
+.hangman-display {
+	margin: 20px 0;
+}
+/* Image du pendu */
+.hangman-img {
+	max-width: 260px;
+	width: 60%;
+	height: auto;
+	display: block;
+	margin: 0 auto;
+	filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+}
+/* Statistiques du jeu */
+.game-stats {
+	display: flex;
+	gap: 20px;
+	justify-content: center;
+	margin: 25px 0;
+	flex-wrap: wrap;
+}
+/* Boîte de statistique individuelle */
+.stat-box {
+	background: #f5f5f5;
+	padding: 15px 25px;
+	border-radius: 6px;
+	border-left: 4px solid #F7D84C;
+	min-width: 180px;
+}
+/* Étiquette de la statistique */
+.stat-label {
+	display: block;
+	font-size: 0.85rem;
+	color: #666;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	margin-bottom: 8px;
+}
+/* Valeur de la statistique */
+.stat-value {
+	display: block;
+	font-size: 1.8rem;
+	font-weight: 700;
+	color: #1a1a1a;
+	letter-spacing: 1px;
+	word-break: break-all;
+}
+/* Style spécifique pour les tentatives restantes */
+.stat-value.attempts {
+	color: #e53935;
+	font-size: 2rem;
+}
+/* Lettres incorrectes */
+.incorrect-letters {
+	margin: 20px 0;
+	padding: 12px;
+	background: #fff3e0;
+	border-radius: 6px;
+}
+/* Étiquette des lettres incorrectes */
+.incorrect-letters .label {
+	font-weight: 600;
+	color: #333;
+}
+
+.incorrect-letters .letters {
+	display: block;
+	margin-top: 8px;
+	font-size: 1.1rem;
+	color: #e53935;
+	letter-spacing: 2px;
+	min-height: 25px;
+}
+/* Instructions du jeu */
+h1 {
+	font-size: 2rem;
+	margin-bottom: 20px;
+}
+
+p {
+	font-size: 1.2rem;
+	text-align: center;
+	margin: 12px 0;
+	line-height: 1.6;
+	color: #333;
+}
+/* Image du pendu centrée */
+.hangman img {
+	max-width: 260px;
+	width: 60%;
+	height: auto;
+	display: block;
+	margin: 0 auto 12px auto;
+}
+
+/* Alphabet buttons stylés */
+
+.alphabet-form {
+	margin: 30px 0;
+}
+/* Grille pour les boutons de l'alphabet */
+.alphabet {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	gap: 8px;
+	justify-items: center;
+	margin: 0;
+}
+/* Style des boutons de lettres */
+.letter-btn {
+	width: 40px;
+	height: 40px;
+	padding: 0;
+	border: 2px solid #F7D84C;
+;
+	border-radius: 4px;
+	background: #F7D84C;
+
+	color: white;
+	font-weight: 600;
+	cursor: pointer;
+	text-transform: uppercase;
+	font-size: 0.9rem;
+	transition: all 0.15s ease;
+}
+/* Effets hover rouge pour les boutons de lettres */
+.letter-btn:hover:not(:disabled) {
+	background: #d32f2f;
+	border-color: #d32f2f;
+	transform: scale(1.1);
+}
+/* Effets actif pour les boutons de lettres */
+.letter-btn:active:not(:disabled) {
+	transform: scale(0.95);
+}
+/* Style pour les boutons de lettres désactivés */
+.letter-btn:disabled {
+	background: #eee;
+	border-color: #ccc;
+	color: #999;
+	cursor: not-allowed;
+}
+
+/* Fin de Partie */
+
+.game-end {
+	margin: 30px 0 20px 0;
+	padding: 20px;
+	background: #f5f5f5;
+	border-radius: 6px;
+}
+
+.result-message {
+	font-size: 1.5rem;
+	font-weight: 700;
+	margin: 10px 0;
+}
+
+.result-message.success {
+	color: #2e7d32;
+}
+
+.result-message.failure {
+	color: #b71c1c;
+}
+
+.word-reveal {
+	margin-top: 15px;
+	font-size: 1.1rem;
+	color: #333;
+}
+
+.restart-button {
+	display: inline-block;
+	background: #e53935;
+	color: white;
+	padding: 12px 30px;
+	border-radius: 4px;
+	text-decoration: none;
+	font-weight: 600;
+	margin-top: 15px;
+	transition: all 0.2s ease;
+}
+
+.restart-button:hover {
+	background: #d32f2f;
+	box-shadow: 0 2px 8px rgba(229, 57, 53, 0.3);
+}
+
+/* Recommencer */
+
+.abandon-section {
+	margin-top: 25px;
+	padding-top: 20px;
+	border-top: 1px solid #eee;
+}
+
+.abandon-link {
+	color: #e53935;
+	text-decoration: none;
+	font-size: 0.95rem;
+	transition: all 0.2s ease;
+}
+
+.abandon-link:hover {
+	text-decoration: underline;
+	color: #d32f2f;
+}
+
+/* Adaptation pour les petits écrans */
+
+@media (max-width: 420px) {
+  .alphabet { gap: 8px 8px; grid-template-columns: repeat(5, 1fr); }
+  .alphabet .letter { width: 44px; height: 44px; }
+}
+
+/* Page pour le Game Over */
+
+body.gameover-page {
+	font-family: "Shizuru", system-ui, sans-serif;
+}
+
+/* Bouton Recommencer pour la page Game Over */
+
+body.gameover-page .restart-button {
+	background: gold;
+	color: #000;
+	letter-spacing: 1px;
+	transition: all 0.25s ease;
+}
+
+body.gameover-page .restart-button:hover {
+	background: #d32f2f;
+	color: #fff;
+	transform: scale(1.08);
+	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}

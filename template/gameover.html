@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Jeu du Pendu - Fin de partie</title>
+	<link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="game-page gameover-page">
+	<div class="game-container">
+
+		<div class="game-header">
+			<h1>RESULTAT</h1>
+		</div>
+
+		<!-- Image finale -->
+		<div class="hangman-display">
+			<img src="{{.Image}}" alt="Hangman game final state showing the gallows with the hanged figure, representing the end of the game" class="hangman-img">
+		</div>
+
+		<div class="game-end">
+			{{if .Won}}
+				<p class="result-message success">🎉 Bravo, vous avez gagné ! 🎉</p>
+			{{else}}
+				<p class="result-message failure">💀 Partie perdue 💀</p>
+				<p class="word-reveal">
+					Le mot était : <strong>{{.Game.Word}}</strong>
+				</p>
+			{{end}}
+
+			<!-- Bouton recommencer -->
+			<a href="/new" class="restart-button">Recommencer</a>
+
+			<!-- Retour accueil -->
+			<div class="abandon-section">
+				<a href="/" class="abandon-link">Retour à l'accueil</a>
+			</div>
+		</div>
+
+	</div>
+</body>
+</html>
